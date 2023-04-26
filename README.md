@@ -1,7 +1,9 @@
 ---
-title: Leetcode
+title: Coding Practice
 ---
 
-# Leet code
+# Coding Practice
+
+## Leet code
 
 [me](https://ductn.info/about)
