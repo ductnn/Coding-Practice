@@ -4,6 +4,7 @@ import (
 	"fmt"
 )
 
+// Sol 2
 func sortedSquares1(nums []int) []int {
 	l := 0
 	r := len(nums) - 1
@@ -26,6 +27,15 @@ func sortedSquares1(nums []int) []int {
 	return res
 }
 
+func abs(a int) int {
+	if a > 0 {
+		return a
+	}
+
+	return -a
+}
+
+// Sol 1
 func sortedSquares(nums []int) []int {
 	res := make([]int, len(nums))
 
@@ -76,14 +86,6 @@ func Partition(array []int, left, right int) int {
 
 func Swap(array []int, i, j int) {
 	array[i], array[j] = array[j], array[i]
-}
-
-func abs(a int) int {
-	if a > 0 {
-		return a
-	}
-
-	return -a
 }
 
 func main() {
