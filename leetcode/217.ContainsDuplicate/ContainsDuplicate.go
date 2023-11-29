@@ -24,6 +24,19 @@ func containsDuplicate(nums []int) bool {
 	return false
 }
 
+func containsDuplicate1(nums []int) bool {
+	m := map[int]bool{}
+
+	for _, n := range nums {
+		if m[n] {
+			return true
+		}
+		m[n] = true
+	}
+
+	return false
+}
+
 func main() {
 	nums := []int{8, 5, 2, 9, 10, 6, 3, 3}
 
