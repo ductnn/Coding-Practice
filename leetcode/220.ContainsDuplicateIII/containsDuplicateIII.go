@@ -32,7 +32,7 @@ func containsNearbyAlmostDuplicate1(nums []int, indexDiff int, valueDiff int) bo
 		return false
 	}
 
-	buckets := make(map[int]int)
+	buckets := make(map[int]int, len(nums))
 	width := valueDiff + 1
 
 	for i, num := range nums {
