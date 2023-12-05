@@ -47,11 +47,52 @@ func fourSum(nums []int, target int) [][]int {
 	return result
 }
 
+func fourSum1(nums []int, target int) [][]int {
+	result := [][]int{}
+	n := len(nums)
+
+	if n < 4 {
+		return result
+	}
+
+	sort.Ints(nums)
+	for i := 0; i < n-3; i++ {
+		if i > 0 && nums[i] == nums[i-1] {
+			continue
+		}
+		for j := i + 1; j < n-2; j++ {
+			if j > i+1 && nums[j] == nums[j-1] {
+				continue
+			}
+			k, l := j+1, n-1
+			for k < l {
+				sum := nums[i] + nums[j] + nums[k] + nums[l]
+				if sum < target {
+					k++
+				} else if sum > target {
+					l--
+				} else {
+					result = append(result, []int{nums[i], nums[j], nums[k], nums[l]})
+					k++
+					l--
+					for k < l && nums[k] == nums[k-1] {
+						k++
+					}
+					for k < l && nums[l] == nums[l+1] {
+						l--
+					}
+				}
+			}
+		}
+	}
+	return result
+}
+
 func main() {
-	input := []int{-3, -1, 0, 2, 4, 5}
+	input := []int{1, 0, -1, 0, -2, 2}
 	target := 0
 
 	// sort.Ints(input)
 	// fmt.Println(input)
-	fmt.Println(fourSum(input, target))
+	fmt.Println(fourSum1(input, target))
 }
