@@ -9,10 +9,14 @@ func moveZeroes(nums []int) []int {
 	for k, v := range nums {
 		if v != 0 {
 			i++
-			nums[i], nums[k] = nums[k], nums[i]
+			Swap(nums, i, k)
 		}
 	}
 	return nums
+}
+
+func Swap(array []int, i, j int) {
+	array[i], array[j] = array[j], array[i]
 }
 
 func main() {
