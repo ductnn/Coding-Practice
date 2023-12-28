@@ -28,11 +28,6 @@ func getLengthOfOptimalCompression(s string, k int) int {
 				} else {
 					diff++
 				}
-				// if j+diff <= k {
-				// 	dp[m][j+diff] = min(dp[m][j+diff], calLength(same)+1+dp[i-1][j])
-				// } else {
-				// 	break
-				// }
 			}
 		}
 	}
