@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strings"
 )
 
 func lengthOfLastWord(s string) int {
@@ -18,7 +19,14 @@ func lengthOfLastWord(s string) int {
 	return i - j
 }
 
+func lengthOfLastWord1(s string) int {
+	s = strings.TrimSpace(s)
+	words := strings.Split(s, " ")
+
+	return len(words[len(words)-1])
+}
+
 func main() {
 	s := "luffy is still joyboy"
-	fmt.Println(lengthOfLastWord(s))
+	fmt.Println(lengthOfLastWord1(s))
 }
