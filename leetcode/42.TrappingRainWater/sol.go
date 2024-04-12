@@ -2,6 +2,10 @@
 
 package main
 
+import (
+	"fmt"
+)
+
 func trap(height []int) int {
 	res := 0
 	n := len(height)
@@ -32,4 +36,10 @@ func max(a, b int) int {
 	}
 
 	return b
+}
+
+func main() {
+	height := []int{0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1}
+
+	fmt.Println(trap(height))
 }
